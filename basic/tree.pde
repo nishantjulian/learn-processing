@@ -1,13 +1,14 @@
 float theta;   
 
 void setup() {
-  size(640, 640); //size(640, 360);
+  size(640, 640);
 }
 
 void draw() {
-  background(0);
+  background(#449CED);
   frameRate(30);
   stroke(#BA4A00);
+  strokeWeight(2);
   // Let's pick an angle 0 to 90 degrees based on the mouse position
   float a = (mouseX / (float) width) * 90f;
   // Convert it to radians
@@ -38,7 +39,7 @@ void branch(float h) {
     branch(h);       // Ok, now call myself to draw two new branches!!
 
     noStroke();
-    ellipse(0, 0, 2, 10);
+    ellipse(0, 0, 5, 20);
     stroke(#BA4A00);
     popMatrix();     // Whenever we get back here, we "pop" in order to restore the previous matrix state
 
@@ -49,7 +50,7 @@ void branch(float h) {
     translate(0, -h);
     branch(h);
     noStroke();
-    ellipse(0, 0, 10, 2);
+    ellipse(0, 0, 20, 5);
     stroke(#BA4A00);
     popMatrix();
 
