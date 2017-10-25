@@ -13,13 +13,13 @@ void draw() {
   // Convert it to radians
   theta = radians(a);
   // Start the tree from the bottom of the screen
-  //translate(width/2, height);
+  translate(width/2, height);
   //start a tree from the centre of the screen
-  translate(width/2, height/2);
+  //translate(width/2, height/2);
   // Draw a line 120 pixels
-  //line(0, 0, 0, -120);
+  line(0, 0, 0, -120);
   // Move to the end of that line
-  //translate(0, -120);
+  translate(0, -120);
   // Start the recursive branching!
   branch(120);
 }
@@ -37,7 +37,9 @@ void branch(float h) {
     translate(0, -h); // Move to the end of the branch
     branch(h);       // Ok, now call myself to draw two new branches!!
 
-    ellipse(0, 0, 5, 5);
+    noStroke();
+    ellipse(0, 0, 2, 10);
+    stroke(#BA4A00);
     popMatrix();     // Whenever we get back here, we "pop" in order to restore the previous matrix state
 
     // Repeat the same thing, only branch off to the "left" this time!
@@ -46,10 +48,11 @@ void branch(float h) {
     line(0, 0, 0, -h);
     translate(0, -h);
     branch(h);
-
-    ellipse(0, 0, 5, 5);
+    noStroke();
+    ellipse(0, 0, 10, 2);
+    stroke(#BA4A00);
     popMatrix();
 
-    fill(random(100),255,random(100));
+    fill(39, 174, 96);
   }
 }
